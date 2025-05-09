@@ -1,0 +1,27 @@
+<div id="updatePatientFormId" class="form bg-light rounded-3 d-flex gap-3 flex-column p-5 d-none" style="border: 2px solid var(--main)">
+    <span id="closeUpdatePatientFormId" class="text-danger fw-bold fs-4 pointer" style="position: absolute; top: 5px; right: 20px">x</span>
+    <h3 class="text-center">تعديل بيانات مريض</h3>
+
+    <div class="d-flex flex-column gap-1">
+        <label for="updatePatientNameInputId" style="color: var(--sub)">اسم المريض *</label>
+        <input id="updatePatientNameInputId" type="text" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+    </div>
+
+    <div class="d-flex flex-column gap-1">
+        <label for="updatePatientMIDInputId" style="color: var(--sub)">الرقم العسكري</label>
+        <input id="updatePatientMIDInputId" type="text" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+    </div>
+
+    <div class="d-flex flex-column gap-1">
+        <label for="updatePatientNotesInputId" style="color: var(--sub)">ملاحظات</label>
+        <input id="updatePatientNotesInputId" type="text" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+    </div>
+
+    <div class="d-flex flex-column gap-1">
+        <label for="updatePatientDegreeSelectId" style="color: var(--sub)">الدرجة *</label>
+        <select id="updatePatientDegreeSelectId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main); outline: none"></select>
+    </div>
+
+    <span id="updatePatientIdSpanId" class="d-none"></span>
+    <button id="submitUpdatePatientButtonId" class="fw-bold py-2 fs-5 mx-auto mt-3 px-5 rounded border-0 text-light" style="background: var(--main); width: max-content">حفظ</button>
+</div>

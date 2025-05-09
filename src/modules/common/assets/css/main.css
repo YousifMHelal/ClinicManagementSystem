@@ -1,0 +1,184 @@
+:root {
+  --main: #20c997;
+  --sub: #13795b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: var(--main);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track{
+  background:#fff;
+  border-radius: 6px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#uploadFileButtonId:disabled {
+  display: none;
+}
+
+td input {
+  width: 3rem;
+  padding: 2px 5px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+input::placeholder{
+  color: var(--main);
+}
+
+h5{
+  color: var(--sub);
+}
+
+.bgLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  z-index: -2;
+  background-color: rgba(255, 255, 255, 0)
+}
+
+.bgLogo img {
+  width: 65%;
+  max-width: 1000px;
+  aspect-ratio: 1;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.enter-exam,
+.resume-exam,
+.not-open-exam {
+  padding: 5px 20px;
+  background: rgba(58, 216, 58, 0.767);
+  border-radius: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.enter-exam {
+  background: rgba(58, 216, 58, 0.767);
+}
+
+.resume-exam {
+  background: rgba(13, 202, 240, 0.808);
+}
+
+.not-open-exam {
+  background: transparent;
+  color: rgb(124, 32, 32);
+}
+
+.d-rtl {
+  direction: rtl;
+}
+
+input {
+  border: none;
+  border-bottom: 3px solid #ddd;
+  width: 350px;
+  outline: none;
+}
+
+.input-container {
+  width: max-content;
+  margin: auto;
+  border: 2px solid var(--main);
+}
+
+.answer {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 900;
+  font-size: 25px;
+  width: 500px;
+  text-align: center;
+}
+
+.pagination {
+  padding: 5px 45px;
+  border: none;
+  outline: none;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background: rgba(146, 146, 146, 0.205);
+  z-index: 2;
+}
+
+table thead tr{
+  border-bottom: 2px solid var(--main);
+}
+
+
+table tr:not(:last-child){
+  border-bottom: 1px solid var(--main);
+}
+
+.form{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  height: max-content;
+  z-index: 999;
+}
+
+.active{
+    background: rgb(81, 173, 53);
+    border-radius: 8px;
+}
+
+.nav-active{
+  color: var(--main) !important;
+}
+
+@media (max-width: 647px) {
+  .Bg-contianer {
+    display: none;
+  }
+}
+
+input[type=checkbox] {
+  width: 14px;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>بيانات الزيارة</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+
+  </head>
+  <body style="position: relative">
+
+    <%- include("../../common/views/navbar.view.ejs") %>
+    <%- include("./add.visit.medicine.component.view.ejs") %>
+    <%- include("./update.visit.medicine.component.view.ejs") %>
+    <%- include("./add.visit.permission.component.view.ejs") %>
+    <%- include("./update.visit.permission.component.view.ejs") %>
+    <%- include("../../patients/views/update.patient.component.view.ejs") %>
+    <%- include("./update.visit.component.view.ejs") %>
+
+    <div id="overlayDivId" class="overlay d-none"></div>
+
+    <div class="container-lg d-flex flex-column gap-3">
+      <div class="w-100 h-100 p-3 rounded mb-5" style="background: rgb(228 220 220 / 80%);">
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>بيانات المريض</h5>
+          <button id="updatePatientButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">تعديل</button>
+        </div>
+        <table class="table table-hover table-rounded d-rtl text-center" style="background: rgb(255 254 254 / 31%);">
+          <thead class="fw-bold text-light" style="background: var(--sub)">
+            <td>اسم المريض</td>
+            <td>الدرجة</td>
+            <td>الرقم العسكري</td>
+            <td>الملاحظات</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody class="bg-light">
+          <tr>
+            <td id="patientNameId"></td>
+            <td id="patientDegreeId"></td>
+            <td id="patientMilitaryId"></td>
+            <td id="patientNotesId"></td>
+            <td id="patientActionsId" class="col-6 col-md-1"></td>
+          </tr>
+        </tbody>
+        </table>
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>بيانات الزيارة</h5>
+          <button id="updatePatientVisitButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">تعديل</button>
+        </div>
+        <table class="table table-hover table-rounded d-rtl text-center" style="background: rgb(255 254 254 / 31%);">
+          <thead class="fw-bold text-light" style="background: var(--sub)">
+            <td>نوع العيادة</td>
+            <td>التخصص</td>
+            <td>التشخيص</td>
+            <td>اسم الطبيب</td>
+            <td>التاريخ والوقت</td>
+            <td>موعد زيارة اخري</td>
+          </tr>
+        </thead>
+        <tbody id="patientVisitsTableBodyId" class="bg-light"></tbody>
+        </table>
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>الدواء المصروف</h5>
+          <button id="addPatientMedicineButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">اضافة</button>
+        </div>
+
+        <div style="max-height: 35vh; overflow-y: scroll; direction: ltr; margin-bottom: 10px;">
+          <table class="table table-hover table-rounded d-rtl text-center mb-0" style="background: rgb(255 254 254 / 31%);">
+            <thead class="fw-bold text-light" style="background: var(--sub); position: sticky; top: -1px;">
+              <tr>
+                <td>اسم الدواء</td>
+                <td>التصنيف</td>
+                <td>الكمية المصروفة</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody id="patientMedicineTableBodyId" class="bg-light"></tbody>
+          </table>
+        </div>
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>الاورنيك</h5>
+          <button id="addPatientPermissionButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">اضافة</button>
+        </div>
+        <div style="max-height: 35vh; overflow-y: scroll; direction: ltr;">
+          <table class="table table-hover table-rounded d-rtl text-center mb-0" style="background: rgb(255 254 254 / 31%);">
+            <thead class="fw-bold text-light" style="background: var(--sub); position: sticky; top: -1px;">
+              <tr>
+                <td>نوع الاورنيك</td>
+                <td>وصف</td>
+                <td>يبدأ في</td>
+                <td>ينتهي في</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody id="patientPermissionsTableBodyId" class="bg-light"></tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="/js/axios.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/select.options.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/add.visit.medicine.component.js"></script>
+    <script src="/js/update.visit.medicine.component.js"></script>
+    <script src="/js/add.visit.permission.component.js"></script>
+    <script src="/js/update.visit.permission.component.js"></script>
+    <script src="/js/update.patient.component.js"></script>
+    <script src="/js/update.visit.component.js"></script>
+    <script src="/js/visit.js"></script>
+
+  </body>
+</html>

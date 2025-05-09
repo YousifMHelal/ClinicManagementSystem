@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>درجات المرضي</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body>
+
+    <%- include("../../common/views/navbar.view.ejs") %>
+
+    <div id="addRecordFormId" class="form bg-light rounded-3 d-flex gap-3 flex-column p-5 d-none" style="border: 2px solid var(--main)">
+      <span id="closeAddRecordFormButtonId" class="text-danger fw-bold fs-4 pointer" style="position: absolute; top: 5px; right: 20px">x</span>
+      <h3 class="text-center">اضافة درجة مريض</h3>
+  
+      <div class="d-flex flex-column gap-1">
+          <label for="addRecordNameInputId" style="color: var(--sub)">الدرجة *</label>
+          <input id="addRecordNameInputId" type="text" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+      </div>
+  
+      <button id="submitAddRecordButtonId" class="fw-bold py-2 fs-5 mx-auto mt-3 px-5 rounded border-0 text-light" style="background: var(--main); width: max-content">أضافة</button>
+    </div>
+
+    <div id="updateRecordFormId" class="form bg-light rounded-3 d-flex gap-3 flex-column p-5 d-none" style="border: 2px solid var(--main)">
+      <span id="closeUpdateRecordFormButtonId" class="text-danger fw-bold fs-4 pointer" style="position: absolute; top: 5px; right: 20px">x</span>
+      <h3 class="text-center">تعديل درجة المريض</h3>
+  
+      <div class="d-flex flex-column gap-1">
+          <label for="updateRecordNameInputId" style="color: var(--sub)">الدرجة *</label>
+          <input id="updateRecordNameInputId" type="text" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+      </div>
+  
+      <span id="updateRecirdIdSpanId" class="d-none"></span>
+      <button id="submitUpdateRecordButtonId" class="fw-bold py-2 fs-5 mx-auto mt-3 px-5 rounded border-0 text-light" style="background: var(--main); width: max-content">حفظ</button>
+    </div>
+
+    <div id="overlayDivId" class="overlay d-none"></div>
+
+    <div class="container-lg">
+      <div class="w-100 h-100 p-3 rounded" style="background: rgb(228 220 220 / 80%);">
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>درجات المرضي</h5>
+          <button id="addRecordButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">اضافة</button>
+        </div>
+
+        <div style="max-height: 70vh; overflow-y: scroll; direction: ltr;">
+          <table class="table table-hover table-rounded d-rtl text-center mb-0" style="background: rgb(255 254 254 / 31%);">
+            <thead class="fw-bold text-light" style="background: var(--sub); position: sticky; top: -1px;">  
+              <tr>
+                <td>الدرجة</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody id="recordsTableBodyId"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/axios.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/degrees.js"></script>
+
+  </body>
+</html>

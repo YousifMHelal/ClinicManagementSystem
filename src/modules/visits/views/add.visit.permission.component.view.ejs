@@ -1,0 +1,26 @@
+<div id="addPatientPermissionFormId" class="form bg-light rounded-3 d-flex gap-3 flex-column p-5 d-none" style="border: 2px solid var(--main)">
+    <span id="closeAddPatientPermissionButtonId" class="text-danger fw-bold fs-4 pointer" style="position: absolute; top: 5px; right: 20px">x</span>
+    <h3 class="text-center">اضافة اورنيك للمريض</h3>
+
+    <div class="d-flex flex-column gap-1">
+      <label for="addPatientPermissionTypeSelectId" style="color: var(--sub)">نوع الاورنيك *</label>
+      <select id="addPatientPermissionTypeSelectId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main); outline: none"></select>
+    </div>
+
+    <div class="d-flex flex-column gap-1">
+      <label for="addPatientPermissionDescriptionId" style="color: var(--sub)">وصف</label>
+      <input id="addPatientPermissionDescriptionId" type="text" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+    </div>
+
+    <div class="d-flex flex-column gap-1">
+      <label for="addPatientPermissionStartsAtId" style="color: var(--sub)">* من</label>
+      <input id="addPatientPermissionStartsAtId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+    </div>
+
+    <div class="d-flex flex-column gap-1">
+      <label for="addPatientPermissionEndsAtId" style="color: var(--sub)">* الي</label>
+      <input id="addPatientPermissionEndsAtId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+    </div>
+
+    <button id="submitAddPatientPermissionButtonId" class="fw-bold py-2 fs-5 mx-auto mt-3 px-5 rounded border-0 text-light" style="background: var(--main); width: max-content">حفظ</button>
+</div>

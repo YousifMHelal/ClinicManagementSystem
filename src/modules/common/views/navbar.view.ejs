@@ -1,0 +1,70 @@
+<div class="bgLogo">
+  <img src="/images/hospital.png" alt="background">
+</div>
+
+<nav class="navbar navbar-expand-lg mb-3" style="border-bottom: 3px solid var(--main); background: #051b11;">
+  <div class="container">
+    <div class="d-flex">
+      <button id="logoutButtonId" class="text-danger rounded-2 border-0 py-1 px-4 bg-transparent fs-6 fw-bold">
+        <i class="bi-arrow-right-square"></i>
+        تسجيل الخروج</button>
+    </div>
+    
+    <div id="buttonsContainerId" class="navbar-nav gap-4 fw-bold fs-6">
+      <a class="button nav-link text-light" href="/">الرئيسية</a>
+      <a class="button nav-link text-light" href="/patients">المرضي</a>
+      <a class="button nav-link text-light" href="/visits">الزيارات</a>
+      <a class="button nav-link text-light" href="/patients/permission">الاورنيك</a>
+      <div class="dropdown d-flex align-items-center">
+        <a class="dropdown-toggle text-light" style="text-decoration: none;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          الدواء
+        </a>
+        <ul class="dropdown-menu" style="text-align: right;">
+          <li><a class="dropdown-item" href="/medicine">بيانات الدواء</a></li>
+          <li><a class="dropdown-item" href="/medicine/imports">صرفيات الدواء</a></li>
+          <li><a class="dropdown-item" href="/medicine/exports">منصرف الدواء</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-flex align-items-center">
+        <a class="dropdown-toggle text-light" style="text-decoration: none;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          التصنيفات
+        </a>
+        <ul class="dropdown-menu" style="text-align: right;">
+          <li><a class="dropdown-item" href="/medicine/categories">تصنيفات الدواء</a></li>
+          <li><a class="dropdown-item" href="/medicine/units">وحدات قياس الدواء</a></li>
+          <li><a class="dropdown-item" href="/permissions">انواع الاورنيك</a></li>
+          <li><a class="dropdown-item" href="/visits/types">انواع الزيارات</a></li>
+          <li><a class="dropdown-item" href="/specials">التخصصات الطبية</a></li>
+          <li><a class="dropdown-item" href="/degrees">درجات المرضي</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="navbar-brand d-flex gap-2 fs-5 fw-bold text-light align-items-center" href="/">
+      هيئة الاستخبارات العسكرية
+      <img src="/images/logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
+    </a>
+  </div>
+</nav>
+<script>
+  const logoutButton = document.getElementById('logoutButtonId')
+  const buttons = document.querySelectorAll("#buttonsContainerId > a")
+  const buttonsUrlRegexp = [ /^\/$/, /^\/patients/, /^\/medicine\/imports/, /^\/medicine/ ]
+  document.addEventListener('DOMContentLoaded', () => {
+    // let selected = false
+    // buttonsUrlRegexp.forEach((regexp, index) => {
+    //   if (!(selected) && regexp.test(location.pathname)) {
+    //     buttons[index].classList.add('nav-active')
+    //     selected = true
+    //   }
+    // })
+  })
+
+  logoutButton.addEventListener('click', () => {
+    axios.get('/api/auth/logout').then(() => {
+      location.assign('/auth/login')
+    }).catch(() => {
+      alert('خدث خطأ اثناء تسجيل الخروج')
+    })
+  })
+</script>

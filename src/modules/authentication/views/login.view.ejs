@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>تسجيل الدخول</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+
+    <div class="bgLogo">
+      <img src="/images/hospital.png" alt="background">
+    </div>
+    
+    <main class="row">
+      <div class="col Bg-contianer position-relative"></div>
+      <div class="col d-flex justify-content-center align-items-center flex-column gap-4 form" >
+        <div class="p-5 text-light d-flex flex-column justify-content-center gap-4 rounded-4" style="background: rgb(228 220 220 / 80%); box-shadow: 0 0 20px 8px #000000b0;" >
+          <div style="text-align: center">
+            <h2 style="color: var(--sub);">تسجيل الدخول</h2>
+            <p style="color: var(--main);">من فضلك قم بادخال اسم المستخدم وكلمة المرور</p>
+          </div>
+          <div class="d-rtl d-flex flex-column align-items-start">
+            <label for="" class="fs-6 mb-2 fw-bold" style="color: var(--sub);">اسم المستخدم</label>
+            <input type="text" id="usernameInputId" class="bg-light rounded px-2 py-1" style="border: 1px solid var(--main);font-size: 16px;" placeholder="اسم المستخدم" />
+          </div>
+          <div class="d-rtl d-flex flex-column align-items-start">
+            <label for="" class="fs-6 mb-2 fw-bold" style="color: var(--sub);">كلمة السر</label>
+           <div class="position-relative">
+            <input type="password" id="passwordInputId" class="bg-light rounded px-2 py-1" style="border: 1px solid var(--main);font-size: 16px;" placeholder="ادخل كلمة السر" />
+          <div style="cursor: pointer; top: 4px;" class="position-absolute start-0 text-light fw-bold">
+            <span id="showButtonId" style="display: none;"><i title="عرض" class='bi bi-eye pointer ms-2 fw-bold fs-5' style='color: var(--main)'></i></span>
+            <span id="hideButtonId" style="display: none;"><i title="اخفاء" class='bi bi-eye-slash pointer ms-2 fw-bold fs-5' style='color: var(--main)'></i></span>
+          </div>
+           </div>
+          </div>
+          <button id="submitButtonId" class="px-4 py-1 rounded fw-bold mx-auto" style="border: 1px solid var(--main); color: var(--main); font-size: 18px; width: max-content; outline: none;">تسجيل الدخول</button>
+          <label id="messageLabelId" class="text-danger" style="display: none" ></label>
+        </div>
+      </div>
+    </main>
+    <script src="/js/axios.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<div id="addPatientMedicineFormId" class="form bg-light rounded-3 d-flex gap-3 flex-column p-5 d-none" style="border: 2px solid var(--main)">
+    <span id="closeAddPatientMedicineButtonId" class="text-danger fw-bold fs-4 pointer" style="position: absolute; top: 5px; right: 20px">x</span>
+    <h3 class="text-center">صرف دوئاء للمريض</h3>
+
+    <div class="d-flex flex-column gap-1">
+      <label for="addPatientMedicineCategorySelectId" style="color: var(--sub)">تصنيف الدواء *</label>
+      <select id="addPatientMedicineCategorySelectId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main); outline: none"></select>
+    </div>
+
+    <div class="d-flex flex-column gap-1">
+      <label for="addPatientMedicineSelectId" style="color: var(--sub)">الدواء *</label>
+      <select id="addPatientMedicineSelectId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main); outline: none"></select>
+    </div>
+
+    <div class="d-flex flex-column gap-1">
+      <label for="addPatientMedicineAmountId" style="color: var(--sub)">* الكمية</label>
+      <input id="addPatientMedicineAmountId" type="number" min="1" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+    </div>
+
+    <button id="submitAddPatientMedicineButtonId" class="fw-bold py-2 fs-5 mx-auto mt-3 px-5 rounded border-0 text-light" style="background: var(--main); width: max-content">حفظ</button>
+</div>

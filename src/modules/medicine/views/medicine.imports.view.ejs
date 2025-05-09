@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>صرفيات الدواء</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body>
+
+    <%- include("../../common/views/navbar.view.ejs") %>
+    <%- include("./add.medicine.import.component.view.ejs") %>
+    <%- include("./update.medicine.import.component.view.ejs") %>
+
+    <div id="overlayDivId" class="overlay d-none"></div>
+
+    <div class="container-lg">
+      <div class="w-100 h-100 p-3 rounded" style="background: rgb(228 220 220 / 80%);">
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>صرفيات الدواء</h5>
+          <div>
+            <input id="searchInputId" type="search" placeholder="ابحث باسم الدكتور" class="bg-light rounded px-2 py-1" style="border: 1px solid var(--main);font-size: 16px;">
+            <span class="me-2 px-2 py-1 rounded fw-bold" style="border: 1px solid var(--main); background-color: white; font-size: 18px;">
+              <label for="toDayInputId"  style="color: var(--main);">في تاريخ</label>
+              <input id="dayInputId" type="date" class="fw-bold" style="color: var(--main); width: fit-content;  border: none;"/>
+            </span>
+          </div>
+          <button id="addMedicineImportButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">اضافة</button>
+        </div>
+
+        <div style="max-height: 70vh; overflow-y: scroll; direction: ltr;">
+          <table class="table table-hover table-rounded d-rtl text-center mb-0" style="background: rgb(255 254 254 / 31%);">
+            <thead class="fw-bold text-light" style="background: var(--sub); position: sticky; top: -1px;">  
+              <tr>
+                <td>اسم الدكتور</td>
+                <td>التاريخ والوقت</td>
+                <td>عدد الدواء المصروف</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody id="importsTableBodyId"></tbody>
+          </table>
+        </div>  
+        </div>
+      </div>
+
+    <script src="/js/axios.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/add.medicine.import.component.js"></script>
+    <script src="/js/update.medicine.import.component.js"></script>
+    <script src="/js/medicine.imports.js"></script>
+
+  </body>
+</html>

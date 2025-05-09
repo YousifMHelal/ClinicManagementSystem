@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>الزيارات</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body style="position: relative">
+
+    <%- include("../../common/views/navbar.view.ejs") %>
+    <%- include("./update.visit.component.view.ejs") %>
+
+    <div class="container-lg d-flex flex-column gap-3">
+      <div class="w-100 h-100 p-3 rounded" style="background: rgb(228 220 220 / 80%);">
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>الزيارات</h5>
+          <div>
+            <select id="degreeFilterSelectId" class="me-2 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px"></select>
+            <select id="visitTypeSelectId" class="me-2 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px"></select>
+            <select id="specialSelectId" class="me-2 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px"></select>
+            <span class="me-2 px-2 py-1 rounded fw-bold" style="border: 1px solid var(--main); background-color: white; font-size: 18px;">
+              <label for="toDayInputId"  style="color: var(--main);">الي تاريخ</label>
+              <input id="toDayInputId" type="date" class="fw-bold" style="color: var(--main); width: fit-content;  border: none;"/>
+            </span>
+            <span class="me-2 px-2 py-1 rounded fw-bold" style="border: 1px solid var(--main); background-color: white; font-size: 18px;">
+              <label for="toDayInputId"  style="color: var(--main);">من تاريخ</label>
+              <input id="fromDayInputId" type="date" class="fw-bold" style="color: var(--main); width: fit-content;  border: none;"/>
+            </span>
+          </div>
+          <button id="printButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">طباعة</button>
+        </div>
+        
+        <div style="max-height: 70vh; overflow-y: scroll; direction: ltr;">
+          <table class="table table-hover table-rounded d-rtl text-center mb-0" style="background: rgb(255 254 254 / 31%);">
+            <thead class="fw-bold text-light" style="background: var(--sub); position: sticky; top: -1px;">  
+              <td>اسم المريض</td>
+              <td>الدرجة</td>
+              <td>نوع العيادة</td>
+              <td>التخصص</td>
+              <td>التشخيص</td>
+              <td>اسم الطبيب</td>
+              <td>التاريخ والوقت</td>
+              <td>موعد زيارة اخري</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody id="patientVisitsTableBodyId" class="bg-light"></tbody>
+          </table>
+        </div>  
+      </div>
+    </div>
+
+    <script src="/js/axios.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/select.options.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/update.visit.component.js"></script>
+    <script src="/js/visits.js"></script>
+
+  </body>
+</html>

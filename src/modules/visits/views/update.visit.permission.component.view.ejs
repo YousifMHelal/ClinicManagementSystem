@@ -1,0 +1,27 @@
+<div id="updatePatientPermissionFormId" class="form bg-light rounded-3 d-flex gap-3 flex-column p-5 d-none" style="border: 2px solid var(--main)">
+  <span id="closeUpdatePatientPermissionButtonId" class="text-danger fw-bold fs-4 pointer" style="position: absolute; top: 5px; right: 20px">x</span>
+  <h3 class="text-center">تعديل بيانات اورينك للمريض</h3>
+
+  <div class="d-flex flex-column gap-1">
+    <label for="updatePatientPermissionTypeSelectId" style="color: var(--sub)">نوع الاورنيك *</label>
+    <select id="updatePatientPermissionTypeSelectId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main); outline: none"></select>
+  </div>
+
+  <div class="d-flex flex-column gap-1">
+    <label for="updatePatientPermissionDescriptionId" style="color: var(--sub)">وصف</label>
+    <input id="updatePatientPermissionDescriptionId" type="text" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+  </div>
+
+  <div class="d-flex flex-column gap-1">
+    <label for="updatePatientPermissionStartsAtId" style="color: var(--sub)">* من</label>
+    <input id="updatePatientPermissionStartsAtId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+  </div>
+
+  <div class="d-flex flex-column gap-1">
+    <label for="updatePatientPermissionEndsAtId" style="color: var(--sub)">* الي</label>
+    <input id="updatePatientPermissionEndsAtId" type="date" class="px-1 bg-transparent text-dark" style="border-bottom: 2px solid var(--main)" />
+  </div>
+
+  <span id="updatePatientPermissionIdSpanId" class="d-none"></span>
+  <button id="submitUpdatePatientPermissionButtonId" class="fw-bold py-2 fs-5 mx-auto mt-3 px-5 rounded border-0 text-light" style="background: var(--main); width: max-content">حفظ</button>
+</div>

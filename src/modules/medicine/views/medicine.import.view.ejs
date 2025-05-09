@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>صرفية الدواء</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body>
+
+    <%- include("../../common/views/navbar.view.ejs") %>
+    <%- include("./update.medicine.import.component.view.ejs") %>
+    <%- include("./add.medicine.import.item.component.view.ejs") %>
+    <%- include("./update.medicine.import.item.component.view.ejs") %>
+
+    <div id="overlayDivId" class="overlay d-none"></div>
+
+    <div class="container-lg">
+      <div class="w-100 h-100 p-3 rounded" style="background: rgb(228 220 220 / 80%);">
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>بيانات الصرفية</h5>
+          <button id="updateMedicineImportButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">تعديل</button>
+        </div>
+        <table class="table table-hover table-rounded d-rtl text-center" style="background: rgb(255 254 254 / 31%);">
+          <thead class="fw-bold text-light" style="background: var(--sub)">  
+            <tr>
+              <td>اسم الدكتور</td>
+              <td>التاريخ والوقت</td>
+              <td>عدد الدواء المصروف</td>
+            </tr>
+          </thead>
+          <tbody id="importsTableBodyId"></tbody>
+        </table>
+        
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <h5>الدواء المصروف</h5>
+          <button id="addMedicineImportItemButtonId" class="px-4 py-1 rounded fw-bold" style="border: 1px solid var(--main); color: var(--main); font-size: 18px">اضافة</button>
+        </div>
+        <table class="table table-hover table-rounded d-rtl text-center" style="background: rgb(255 254 254 / 31%);">
+          <thead class="fw-bold text-light" style="background: var(--sub)"> 
+            <tr>
+              <td>اسم الدواء</td>
+              <td>التصنيف</td>
+              <td>الكمية</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody id="importItemsTableBodyId"></tbody>
+        </table>
+
+      </div>
+    </div>
+
+    <script src="/js/axios.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/select.options.js"></script>
+    <script src="/js/update.medicine.import.component.js"></script>
+    <script src="/js/add.medicine.import.item.component.js"></script>
+    <script src="/js/update.medicine.import.item.component.js"></script>
+    <script src="/js/medicine.import.js"></script>
+
+  </body>
+</html>
