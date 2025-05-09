@@ -6,7 +6,7 @@ The **Clinic Management System** is a web-based application designed to streamli
 
 > 🛠️ **Note:** This project was developed during my military service period without any internet access. I contributed specifically to the **front-end development** using Bootstrap.
 
-## <a name="tech-stack">⚙️ Tech Stack</a>\
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - **Frontend:**
   - EJS (Embedded JavaScript Templates)
